@@ -1,5 +1,5 @@
 # Terminal apps
-brew install git jenkins iterm2 tmux tmux-iterm2
+brew install git jenkins iterm2 sonar sonar-runner tmux tmux-iterm2
 # Z shell + enhancements
 brew install zsh zsh-lovers zsh-completions zsh-syntax-highlighting zsh-history-substring-search
 ## oh-my-zsh
