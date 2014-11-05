@@ -15,11 +15,11 @@ brew cask alfred link
 brew cask install aquamacs atom dash java lightpaper lighttable node p4merge sublime-text textmate
 brew cask install gitbox github gitter intellij-idea-ce synergy vagrant vagrant-bar
 ## Data Analysis
-brew cask install rstudio dbvisualizer
+brew cask install graphviz gephi rstudio dbvisualizer
 ## Gaming
 brew cask install steam
 ## Graphics / Video
-brew cask install blender camtasia darktable geektool gimp graphviz inkscape pencil skype teamviewer yed youtube-dl vlc
+brew cask install blender camtasia darktable geektool gimp inkscape pencil skype teamviewer yed youtube-dl vlc
 ## Music
 brew cask install audacity itunes-volume-control lilypond musescore synthesia tuxguitar
 ## Productivity
