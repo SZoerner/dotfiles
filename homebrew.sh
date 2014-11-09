@@ -21,7 +21,7 @@ brew cask install steam
 ## Graphics / Video
 brew cask install blender camtasia darktable geektool gimp inkscape pencil skype teamviewer yed youtube-dl vlc
 ## Music
-brew cask install audacity itunes-volume-control lilypond musescore synthesia tuxguitar
+brew cask install audacity itunes-volume-control lilypond musescore sonic-pi synthesia tuxguitar
 ## Productivity
 brew cask install alfred cheatsheet eve manager the-unarchiver tiddlywiki teamviz
 ## Project Management
