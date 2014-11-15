@@ -13,7 +13,7 @@ brew cask alfred link
 # Homebrew Cask Packages:
 ## Coding
 brew cask install aquamacs atom dash java lightpaper lighttable node p4merge sublime-text textmate
-brew cask install gitbox github gitter gitbucket intellij-idea-ce synergy vagrant vagrant-bar
+brew cask install gitbox github gitter gitbucket intellij-idea-ce mongodb robomongo synergy vagrant vagrant-bar
 ## Data Analysis
 brew cask install graphviz gephi rstudio dbvisualizer
 ## Gaming
@@ -40,7 +40,7 @@ brew cask install haskell-platform
 cabal update && cabal install ghc-mod stylish-haskell
 
 # Clojure
-brew install leiningen
+brew install leiningen datomic
 
 # Elm
 brew cask install elm-platform
