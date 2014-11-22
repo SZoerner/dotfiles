@@ -7,6 +7,9 @@
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
+# Disable saving temp files to iCloud
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write -g ApplePressAndHoldEnabled -bool false
 
