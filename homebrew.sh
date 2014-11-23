@@ -35,6 +35,9 @@ export  HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Link Alfred with Cask Apps
 brew cask alfred link
 
+# install beta versions like Chrome Canary or Sublime Text 3
+brew tap caskroom/versions
+
 # Homebrew Cask Packages:
 coding=(
   aquamacs 
@@ -44,8 +47,9 @@ coding=(
   java 
   lightpaper 
   lighttable 
+  mackup
   p4merge 
-  sublime-text 
+  sublime-text3 
   textmate
 )
 echo "installing coding apps..."
@@ -114,7 +118,8 @@ music=(
   itunes-volume-control 
   lilypond 
   musescore 
-  sonic-pi 
+  sonic-pi
+  spotify 
   synthesia 
   tuxguitar
 )
