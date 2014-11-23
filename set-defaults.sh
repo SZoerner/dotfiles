@@ -233,6 +233,11 @@ echo ""
 echo "Adding a context menu item for showing the Web Inspector in web views"
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
+echo ""
+echo "Using the system-native print preview dialog in Chrome"
+defaults write com.google.Chrome DisablePrintPreview -bool true
+defaults write com.google.Chrome.canary DisablePrintPreview -bool true
+
 
 ###############################################################################
 # Mail
@@ -314,7 +319,38 @@ sudo pmset -a sleep 0
 sudo pmset -a displaysleep 0
 
 ###############################################################################
-# Kill affected applications
+# Transmission.app                                                            #
 ###############################################################################
+
+echo ""
+echo "Use `~/Downloads/Incomplete` to store incomplete downloads"
+defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+mkdir -p ~/Downloads/Incomplete
+defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
+
+echo ""
+echo "Don't prompt for confirmation before downloading"
+defaults write org.m0k.transmission DownloadAsk -bool false
+
+echo ""
+echo "Trash original torrent files"
+defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+
+echo ""
+echo "Hide the donate message"
+defaults write org.m0k.transmission WarningDonate -bool false
+
+echo ""
+echo "Hide the legal disclaimer"
+defaults write org.m0k.transmission WarningLegal -bool false
+
+###############################################################################
+# Sublime Text
+###############################################################################
+
+echo ""
+echo "Setting Git to use Sublime Text as default editor"
+git config --global core.editor "subl -n -w"
+    
 
 echo "Done!"
