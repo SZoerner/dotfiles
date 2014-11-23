@@ -7,16 +7,15 @@ binaries=(
   iterm2
   node
   python
+  tiger-vnc
   tmux 
   tmux-iterm2
   tree
 )
 
-echo "installing terminal app..."
+echo "installing terminal apps..."
 brew install ${binaries[@]}
 
-
-brew install jenkins sonar sonar-runner
 # Z shell + enhancements
 brew install zsh zsh-lovers zsh-completions zsh-syntax-highlighting zsh-history-substring-search
 ## oh-my-zsh
@@ -30,9 +29,26 @@ export  HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew cask alfred link
 
 # Homebrew Cask Packages:
-## Coding
-brew cask install aquamacs atom dash java lightpaper lighttable node p4merge sublime-text textmate
-brew cask install gitbox github gitter gitbucket intellij-idea-ce mongodb robomongo synergy vagrant vagrant-bar
+
+coding=(
+  aquamacs 
+  atom 
+  dash 
+  intellij-idea-ce
+  java 
+  lightpaper 
+  lighttable 
+  p4merge 
+  sublime-text 
+  textmate
+)
+
+echo "installing coding apps..."
+brew cask install ${coding[@]}
+
+brew install jenkins sonar sonar-runner
+
+brew cask install gitbox github gitter gitbucket mongodb robomongo synergy vagrant vagrant-bar
 ## Data Analysis
 brew cask install graphviz gephi rstudio dbvisualizer
 ## Gaming
@@ -48,10 +64,18 @@ brew cask install ganttproject
 ## Text editing
 brew cask install calibre gitbook libreoffice marked scribus typewriter
 ## Utilities
+utilities=(
+  adium 
+  hipchat 
+  jdownloader 
+  unetbootin
+)
+
+echo "installing utilities apps..."
+brew cask install ${utilities[@]}
+
 brew cask install cakebrew chicken ccleaner cyberduck disk-inventory-x virtualbox transmission
 brew cask install arrsync dropbox google-chrome firefox flux freefilesync freemind
-brew cask install adium hipchat jdownloader unetbootin
-
 
 # Haskell: Haskell-Platform
 brew cask install haskell-platform
