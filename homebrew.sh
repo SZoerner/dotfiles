@@ -1,11 +1,14 @@
 # Install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Terminal apps
+# Homebrew apps
 binaries=(
-  git
   iterm2
+  fish # fish shell
+  git
   jenkins 
+  leiningen # Clojure
+  datomic
   node
   python
   sonar 
@@ -15,17 +18,8 @@ binaries=(
   tmux-iterm2
   tree
 )
-
 echo "installing terminal apps..."
 brew install ${binaries[@]}
-
-# Clojure
-brew install leiningen datomic
-
-# Z shell + enhancements
-brew install zsh zsh-lovers zsh-completions zsh-syntax-highlighting zsh-history-substring-search
-## oh-my-zsh
-curl -L http://install.ohmyz.sh | sh
 
 
 # Homebrew Cask
@@ -34,7 +28,6 @@ brew install caskroom/cask/brew-cask
 export  HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Link Alfred with Cask Apps
 brew cask alfred link
-
 # install beta versions like Chrome Canary or Sublime Text 3
 brew tap caskroom/versions
 
@@ -81,7 +74,7 @@ git=(
 echo "installing git apps..."
 brew cask install ${git[@]}
 
-## Data Analysis
+# Data Analysis
 data=(
   graphviz 
   gephi 
@@ -91,10 +84,10 @@ data=(
 echo "installing data apps..."
 brew cask install ${data[@]}
 
-## Gaming
+# Gaming
 brew cask install steam
 
-## Graphics / Video
+# Graphics / Video
 video=(
   blender 
   camtasia 
@@ -112,7 +105,7 @@ video=(
 echo "installing video apps..."
 brew cask install ${video[@]}
 
-## Music
+# Music
 music=(
   audacity 
   itunes-volume-control 
@@ -126,7 +119,7 @@ music=(
 echo "installing music apps..."
 brew cask install ${music[@]}
 
-## Productivity
+# Productivity
 productivity=(
   alfred 
   cheatsheet 
@@ -135,12 +128,11 @@ productivity=(
   the-unarchiver 
   tiddlywiki 
   teamviz
-
 )
 echo "installing productivity apps..."
 brew cask install ${productivity[@]}
 
-## Text editing
+# Text editing
 text=(
   calibre 
   gitbook 
@@ -152,7 +144,7 @@ text=(
 echo "installing text apps..."
 brew cask install ${text[@]}
 
-## Utilities
+# Utilities
 utilities=(
   adium 
   cakebrew 
@@ -173,9 +165,7 @@ brew cask install ${utilities[@]}
 
 # Haskell: Haskell-Platform
 brew cask install haskell-platform
-## Cabal Packages: code-linting, autoformatting
+# Cabal Packages: code-linting, autoformatting
 cabal update && cabal install ghc-mod stylish-haskell
-
-
 # Elm
 brew cask install elm-platform
