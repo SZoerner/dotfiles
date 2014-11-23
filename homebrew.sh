@@ -1,3 +1,6 @@
+# Install homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Terminal apps
 brew install git jenkins iterm2 sonar sonar-runner tmux tmux-iterm2
 # Z shell + enhancements
@@ -7,6 +10,8 @@ curl -L http://install.ohmyz.sh | sh
 
 # Homebrew Cask
 brew install caskroom/cask/brew-cask
+## Specify the symlink directory for homebrew cask packages
+export  HOMEBREW_CASK_OPTS="--appdir=/Applications"
 ## Link Alfred with Cask Apps
 brew cask alfred link
 
