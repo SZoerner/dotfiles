@@ -5,8 +5,11 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 binaries=(
   git
   iterm2
+  jenkins 
   node
   python
+  sonar 
+  sonar-runner
   tiger-vnc
   tmux 
   tmux-iterm2
@@ -15,8 +18,6 @@ binaries=(
 
 echo "installing terminal apps..."
 brew install ${binaries[@]}
-
-brew install jenkins sonar sonar-runner
 
 # Clojure
 brew install leiningen datomic
@@ -62,16 +63,64 @@ web=(
 echo "installing web apps..."
 brew cask install ${web[@]}
 
+git=(
+  gitbox 
+  github 
+  gitter 
+  gitbucket 
+  mongodb 
+  robomongo 
+  synergy 
+  vagrant 
+  vagrant-bar
+)
+echo "installing git apps..."
+brew cask install ${git[@]}
 
-brew cask install gitbox github gitter gitbucket mongodb robomongo synergy vagrant vagrant-bar
 ## Data Analysis
-brew cask install graphviz gephi rstudio dbvisualizer
+data=(
+  graphviz 
+  gephi 
+  rstudio 
+  dbvisualizer
+)
+echo "installing data apps..."
+brew cask install ${data[@]}
+
 ## Gaming
 brew cask install steam
+
 ## Graphics / Video
-brew cask install blender camtasia darktable geektool gimp inkscape pencil skype teamviewer yed youtube-dl vlc
+video=(
+  blender 
+  camtasia 
+  darktable 
+  geektool 
+  gimp 
+  inkscape 
+  pencil 
+  skype 
+  teamviewer 
+  yed 
+  youtube-dl 
+  vlc
+)
+echo "installing video apps..."
+brew cask install ${video[@]}
+
 ## Music
-brew cask install audacity itunes-volume-control lilypond musescore sonic-pi synthesia tuxguitar
+music=(
+  audacity 
+  itunes-volume-control 
+  lilypond 
+  musescore 
+  sonic-pi 
+  synthesia 
+  tuxguitar
+)
+echo "installing music apps..."
+brew cask install ${music[@]}
+
 ## Productivity
 productivity=(
   alfred 
@@ -83,6 +132,8 @@ productivity=(
   teamviz
 
 )
+echo "installing productivity apps..."
+brew cask install ${productivity[@]}
 
 ## Text editing
 text=(
