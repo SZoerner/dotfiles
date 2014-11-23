@@ -2,7 +2,21 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Terminal apps
-brew install git jenkins iterm2 sonar sonar-runner tmux tmux-iterm2
+binaries=(
+  git
+  iterm2
+  node
+  python
+  tmux 
+  tmux-iterm2
+  tree
+)
+
+echo "installing terminal app..."
+brew install ${binaries[@]}
+
+
+brew install jenkins sonar sonar-runner
 # Z shell + enhancements
 brew install zsh zsh-lovers zsh-completions zsh-syntax-highlighting zsh-history-substring-search
 ## oh-my-zsh
