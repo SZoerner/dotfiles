@@ -34,18 +34,10 @@ defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 chflags nohidden ~/Library
 
 # Set the Finder prefs for showing a few different volumes on the Desktop.
+echo ""
+echo "Showing icons for hard drives, servers, and removable media on the desktop"
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
-
-# Hide Safari's bookmark bar.
-defaults write com.apple.Safari ShowFavoritesBar -bool false
-
-# Set up Safari for development.
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 echo ""
 echo "Expanding the save panel by default"
@@ -146,10 +138,6 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 ###############################################################################
 
 echo ""
-echo "Showing icons for hard drives, servers, and removable media on the desktop"
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-
-echo ""
 echo "Showing all filename extensions in Finder by default"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
@@ -242,9 +230,6 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # General: automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool true
 
-# Remove the auto-hiding Dock delay
-defaults write com.apple.dock autohide-delay -float 0
-
 # Dock: make icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
@@ -266,8 +251,8 @@ defaults write com.apple.dock showhidden -bool true
 #defaults write com.apple.dock wvous-tl-modifier -int 0
 
 # Top right screen corner → Desktop
-defaults write com.apple.dock wvous-tr-corner -int 4
-defaults write com.apple.dock wvous-tr-modifier -int 0
+#defaults write com.apple.dock wvous-tr-corner -int 4
+#defaults write com.apple.dock wvous-tr-modifier -int 0
 
 # Bottom left screen corner → Mission Control
 #defaults write com.apple.dock wvous-bl-corner -int 2
@@ -430,14 +415,6 @@ defaults write org.m0k.transmission WarningDonate -bool false
 echo ""
 echo "Hide the legal disclaimer"
 defaults write org.m0k.transmission WarningLegal -bool false
-
-###############################################################################
-# Sublime Text
-###############################################################################
-
-echo ""
-echo "Setting Git to use Sublime Text as default editor"
-git config --global core.editor "subl -n -w"
     
 
 echo "Done!"
