@@ -147,6 +147,7 @@ brew cask install ${text[@]}
 # Utilities
 utilities=(
   adium 
+  boot2docker
   cakebrew 
   chicken 
   ccleaner 
