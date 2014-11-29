@@ -11,7 +11,7 @@ brew cask alfred link
 brew tap caskroom/versions
 
 # Homebrew packages:
-fundamentals=(fish git node tiger-vnc tmux tree)
+fundamentals=(fish git node tmux tree)
 # code quality
 quality=(jenkins sonar sonar-runner)
 
