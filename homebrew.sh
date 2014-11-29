@@ -1,27 +1,6 @@
 # Install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Homebrew apps
-binaries=(
-  iterm2
-  fish # fish shell
-  git
-  jenkins 
-  leiningen # Clojure
-  datomic
-  node
-  python
-  sonar 
-  sonar-runner
-  tiger-vnc
-  tmux 
-  tmux-iterm2
-  tree
-)
-echo "installing terminal apps..."
-brew install ${binaries[@]}
-
-
 # Homebrew Cask
 brew install caskroom/cask/brew-cask
 # Specify the symlink directory for homebrew cask packages
@@ -30,6 +9,33 @@ export  HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew cask alfred link
 # install beta versions like Chrome Canary or Sublime Text 3
 brew tap caskroom/versions
+
+
+# Homebrew apps:
+fundamentals=(
+  iterm2
+  fish # fish shell
+  git
+  tmux 
+  tmux-iterm2
+  tree
+)
+echo "installing fundamental apps..."
+brew install ${fundamentals[@]}
+
+binaries=(
+  datomic
+  jenkins 
+  leiningen # Clojure
+  node
+  python
+  sonar 
+  sonar-runner
+  tiger-vnc
+)
+echo "installing terminal apps..."
+brew install ${binaries[@]}
+
 
 # Homebrew Cask Packages:
 coding=(
@@ -85,7 +91,12 @@ echo "installing data apps..."
 brew cask install ${data[@]}
 
 # Gaming
-brew cask install steam
+games=(
+  steam
+  league-of-legends  
+)
+echo "installing games..."
+brew cask install ${games[@]}
 
 # Graphics / Video
 video=(
