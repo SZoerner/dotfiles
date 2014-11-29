@@ -13,22 +13,17 @@ brew tap caskroom/versions
 
 # Homebrew apps:
 fundamentals=(
-  iterm2
-  fish # fish shell
+  fish
   git
-  tmux 
-  tmux-iterm2
+  tmux
   tree
 )
 echo "installing fundamental apps..."
 brew install ${fundamentals[@]}
 
 binaries=(
-  datomic
   jenkins 
-  leiningen # Clojure
   node
-  python
   sonar 
   sonar-runner
   tiger-vnc
@@ -39,26 +34,34 @@ brew install ${binaries[@]}
 
 # Homebrew Cask Packages:
 coding=(
+  iterm2
+  tmux-iterm2
+  java 
+  mackup
+  sublime-text3 
+)
+
+editors=(
   aquamacs 
   atom 
   dash 
   intellij-idea-ce
-  java 
   lightpaper 
   lighttable 
-  mackup
   p4merge 
-  sublime-text3 
   textmate
 )
 echo "installing coding apps..."
 brew cask install ${coding[@]}
 
 web=(
-  arrsync 
   dropbox 
   google-chrome 
   firefox 
+)
+
+apps=(  
+  arrsync 
   flux 
   freefilesync 
   freemind
@@ -69,8 +72,10 @@ brew cask install ${web[@]}
 git=(
   gitbox 
   github 
-  gitter 
-  gitbucket 
+  gitter
+)
+
+mongodb=( 
   mongodb 
   robomongo 
   synergy 
@@ -102,8 +107,7 @@ brew cask install ${games[@]}
 video=(
   blender 
   camtasia 
-  darktable 
-  geektool 
+  darktable  
   gimp 
   inkscape 
   pencil 
@@ -131,10 +135,12 @@ echo "installing music apps..."
 brew cask install ${music[@]}
 
 # Productivity
-productivity=(
-  alfred 
+productivity=( 
+  adium
   cheatsheet 
   eve 
+  ganttproject
+  hipchat
   manager 
   the-unarchiver 
   tiddlywiki 
@@ -157,16 +163,15 @@ brew cask install ${text[@]}
 
 # Utilities
 utilities=(
-  adium 
+  alfred
   boot2docker
   cakebrew 
   chicken 
   ccleaner 
   cyberduck 
-  disk-inventory-x 
-  ganttproject
-  hipchat 
+  disk-inventory-x
   jdownloader 
+  geektool
   transmission
   unetbootin
   virtualbox 
@@ -174,10 +179,17 @@ utilities=(
 echo "installing utility apps..."
 brew cask install ${utilities[@]}
 
+# CLojure
+clojure=(
+  datomic
+  leiningen
+)
+brew install ${clojure[@]}
 
 # Haskell: Haskell-Platform
 brew cask install haskell-platform
-# Cabal Packages: code-linting, autoformatting
+## Cabal Packages: code-linting, autoformatting
 cabal update && cabal install ghc-mod stylish-haskell
+
 # Elm
 brew cask install elm-platform
