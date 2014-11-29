@@ -11,13 +11,13 @@ brew cask alfred link
 brew tap caskroom/versions
 
 # Homebrew packages:
-fundamentals=(fish git node tmux tree)
+fundamentals=(fish git mackup node tmux tree)
 # code quality
 quality=(jenkins sonar sonar-runner)
 
 # Homebrew Cask packages:
 # terminal apps
-terminal=(iterm2 java mackup)
+terminal=(iterm2 java)
 # text editors
 editors=(aquamacs atom dash intellij-idea-ce lightpaper 
   lighttable p4merge sublime-text3 textmate)
