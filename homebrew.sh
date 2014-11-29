@@ -37,8 +37,7 @@ data=(dbvisualizer graphviz gephi rstudio)
 games=(league-of-legends steam)
 # Graphics / Video
 video=(blender camtasia darktable gimp inkscape 
-  pencil teamviewer yed youtube-dl vlc
-)
+  pencil teamviewer yed youtube-dl vlc)
 # Music
 music=(audacity itunes-volume-control lilypond 
   musescore sonic-pi spotify synthesia tuxguitar)
