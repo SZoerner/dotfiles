@@ -1,190 +1,59 @@
 # Install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Homebrew Cask
+# Install Homebrew Cask
 brew install caskroom/cask/brew-cask
 # Specify the symlink directory for homebrew cask packages
 export  HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Link Alfred with Cask Apps
 brew cask alfred link
-# install beta versions like Chrome Canary or Sublime Text 3
+# tap beta versions like Chrome Canary or Sublime Text 3
 brew tap caskroom/versions
 
+# Homebrew packages:
+fundamentals=(fish git node tiger-vnc tmux tree)
+# code quality
+quality=(jenkins sonar sonar-runner)
 
-# Homebrew apps:
-fundamentals=(
-  fish
-  git
-  tmux
-  tree
-)
-echo "installing fundamental apps..."
-brew install ${fundamentals[@]}
-
-binaries=(
-  jenkins 
-  node
-  sonar 
-  sonar-runner
-  tiger-vnc
-)
-echo "installing terminal apps..."
-brew install ${binaries[@]}
-
-
-# Homebrew Cask Packages:
-coding=(
-  iterm2
-  tmux-iterm2
-  java 
-  mackup
-  sublime-text3 
-)
-
-editors=(
-  aquamacs 
-  atom 
-  dash 
-  intellij-idea-ce
-  lightpaper 
-  lighttable 
-  p4merge 
-  textmate
-)
-echo "installing coding apps..."
-brew cask install ${coding[@]}
-
-web=(
-  dropbox 
-  google-chrome 
-  firefox 
-)
-
-apps=(  
-  arrsync 
-  flux 
-  freefilesync 
-  freemind
-)
-echo "installing web apps..."
-brew cask install ${web[@]}
-
-git=(
-  gitbox 
-  github 
-  gitter
-)
-
-mongodb=( 
-  mongodb 
-  robomongo 
-  synergy 
-  vagrant 
-  vagrant-bar
-)
-echo "installing git apps..."
-brew cask install ${git[@]}
-
+# Homebrew Cask packages:
+# terminal apps
+terminal=(iterm2 tmux-iterm2 java mackup)
+# text editors
+editors=(aquamacs atom dash intellij-idea-ce lightpaper 
+  lighttable p4merge sublime-text3 textmate)
+# browsers
+web=(firefox google-chrome)
+# sync & backup
+apps=(arrsync dropbox flux freefilesync freemind skype)
+# git
+git=(gitbox github gitter)
+# mongodb
+mongo=(mongodb robomongo)
+# virtualization
+virtualization=(synergy vagrant vagrant-bar)
 # Data Analysis
-data=(
-  graphviz 
-  gephi 
-  rstudio 
-  dbvisualizer
-)
-echo "installing data apps..."
-brew cask install ${data[@]}
-
+data=(dbvisualizer graphviz gephi rstudio)
 # Gaming
-games=(
-  steam
-  league-of-legends  
-)
-echo "installing games..."
-brew cask install ${games[@]}
-
+games=(league-of-legends steam)
 # Graphics / Video
-video=(
-  blender 
-  camtasia 
-  darktable  
-  gimp 
-  inkscape 
-  pencil 
-  skype 
-  teamviewer 
-  yed 
-  youtube-dl 
-  vlc
+video=(blender camtasia darktable gimp inkscape 
+  pencil teamviewer yed youtube-dl vlc
 )
-echo "installing video apps..."
-brew cask install ${video[@]}
-
 # Music
-music=(
-  audacity 
-  itunes-volume-control 
-  lilypond 
-  musescore 
-  sonic-pi
-  spotify 
-  synthesia 
-  tuxguitar
-)
-echo "installing music apps..."
-brew cask install ${music[@]}
-
+music=(audacity itunes-volume-control lilypond 
+  musescore sonic-pi spotify synthesia tuxguitar)
 # Productivity
-productivity=( 
-  adium
-  cheatsheet 
-  eve 
-  ganttproject
-  hipchat
-  manager 
-  the-unarchiver 
-  tiddlywiki 
-  teamviz
-)
-echo "installing productivity apps..."
-brew cask install ${productivity[@]}
-
+productivity=(adium cheatsheet eve ganttproject 
+  hipchat manager the-unarchiver tiddlywiki teamviz)
 # Text editing
-text=(
-  calibre 
-  gitbook 
-  libreoffice 
-  marked 
-  scribus 
-  typewriter
-)
-echo "installing text apps..."
-brew cask install ${text[@]}
-
+text=(calibre gitbook libreoffice marked scribus typewriter)
 # Utilities
-utilities=(
-  alfred
-  boot2docker
-  cakebrew 
-  chicken 
-  ccleaner 
-  cyberduck 
-  disk-inventory-x
-  jdownloader 
-  geektool
-  transmission
-  unetbootin
-  virtualbox 
-)
-echo "installing utility apps..."
-brew cask install ${utilities[@]}
+utilities=(alfred boot2docker cakebrew chicken 
+  ccleaner cyberduck disk-inventory-x jdownloader 
+  geektool transmission unetbootin virtualbox)
 
-# CLojure
-clojure=(
-  datomic
-  leiningen
-)
-brew install ${clojure[@]}
+# Clojure
+clojure=(datomic leiningen)
 
 # Haskell: Haskell-Platform
 brew cask install haskell-platform
