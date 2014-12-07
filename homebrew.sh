@@ -1,6 +1,11 @@
 # Install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# Homebrew dupes - more recent versions of OSX out-of-the-box utilities
+brew tap homebrew/dupes
+# rsync file synchronisation
+brew install rsync
+
 # Install Homebrew Cask
 brew install caskroom/cask/brew-cask
 # Specify the symlink directory for homebrew cask packages
