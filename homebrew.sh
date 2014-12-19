@@ -22,7 +22,7 @@ quality=(jenkins sonar sonar-runner)
 
 # Homebrew Cask packages:
 # terminal apps
-terminal=(iterm2 java)
+terminal=(amethyst iterm2 java)
 # text editors
 editors=(aquamacs atom dash intellij-idea-ce lightpaper 
   lighttable p4merge sublime-text3 textmate)
