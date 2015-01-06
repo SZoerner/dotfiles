@@ -10,8 +10,10 @@ sudo nvram SystemAudioVolume=%80
 defaults write com.apple.menuextra.battery ShowPercent -string "NO"
 defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
-# General: enable the "Are you sure you want to open this application?" dialog
+# General: disable the "Are you sure you want to open this application?" dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
+# General: disable the Mac OS X Crash Reporter
+defaults write com.apple.CrashReporter DialogType none
 
 # Trackpad: enable tap to click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
