@@ -148,6 +148,10 @@ echo "Showing status bar in Finder by default"
 defaults write com.apple.finder ShowStatusBar -bool true
 
 echo ""
+echo "Showing hidden files in Finder by default"
+defaults write com.apple.finder AppleShowAllFiles YES
+
+echo ""
 echo "Allowing text selection in Quick Look/Preview in Finder by default"
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
