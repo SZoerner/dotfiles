@@ -15,7 +15,7 @@ brew cask alfred link
 # tap beta versions like Chrome Canary or Sublime Text 3
 brew tap caskroom/versions
 
-# Homebrew packages:
+# Homebrew packages: install with brew install ${package[@]}
 fundamentals=(fish git mackup node tmux tree)
 # code quality
 quality=(jenkins sonar sonar-runner)
