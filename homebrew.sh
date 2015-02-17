@@ -35,7 +35,7 @@ git=(gitbox github gitter)
 # mongodb
 mongo=(mongodb robomongo)
 # virtualization
-virtualization=(synergy vagrant vagrant-bar)
+virtualization=(virtualbox vagrant vagrant-manager)
 # Data Analysis
 data=(dbvisualizer graphviz gephi rstudio)
 # Gaming
@@ -54,7 +54,7 @@ text=(calibre gitbook libreoffice marked scribus typewriter)
 # Utilities
 utilities=(alfred boot2docker cakebrew chicken 
   ccleaner cyberduck disk-inventory-x jdownloader 
-  geektool transmission unetbootin virtualbox)
+  geektool transmission unetbootin)
 
 # Clojure
 clojure=(datomic leiningen)
