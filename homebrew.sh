@@ -16,7 +16,8 @@ brew cask alfred link
 brew tap caskroom/versions
 
 # Homebrew packages: install with brew install ${package[@]}
-fundamentals=(fish git mackup node tmux tree)
+# tig: http://blogs.atlassian.com/2013/05/git-tig/
+fundamentals=(fish git tig mackup node tmux tree)
 # code quality
 quality=(jenkins sonar sonar-runner)
 
