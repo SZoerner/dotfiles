@@ -23,10 +23,10 @@ quality=(jenkins sonar sonar-runner)
 
 # Homebrew Cask packages:
 # terminal apps
-terminal=(amethyst iterm2 java spectacle)
+terminal=(iterm2 java spectacle)
 # text editors
-editors=(aquamacs atom dash intellij-idea-ce macdown 
-  lighttable p4merge sublime-text3 textmate)
+editors=(aquamacs atom intellij-idea-ce macdown 
+  lighttable sublime-text3 textmate)
 # browsers
 web=(firefox google-chrome)
 # sync & backup
