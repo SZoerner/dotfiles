@@ -25,7 +25,7 @@ quality=(jenkins sonar sonar-runner)
 # terminal apps
 terminal=(amethyst iterm2 java spectacle)
 # text editors
-editors=(aquamacs atom dash intellij-idea-ce lightpaper 
+editors=(aquamacs atom dash intellij-idea-ce macdown 
   lighttable p4merge sublime-text3 textmate)
 # browsers
 web=(firefox google-chrome)
