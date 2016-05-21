@@ -33,7 +33,10 @@ fundamentals=(fish git tig mackup node tmux tree)
 # code quality
 quality=(jenkins sonar sonar-runner)
 # web coding, REST APIs
-web=(httpie jq pup)
+web=(httpie jq pup icdiff)
+
+# Side-by-side diffs for Mercurial (hg)
+# http://ianobermiller.com/blog/2015/01/12/side-by-side-diffs-for-mercurial-hg/
 
 ##########################
 # Homebrew Cask packages #
