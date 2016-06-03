@@ -60,8 +60,6 @@ mongo=(mongodb robomongo)
 virtualization=(virtualbox vagrant vagrant-manager)
 # Data Analysis
 data=(dbvisualizer graphviz gephi rstudio)
-# Gaming
-games=(league-of-legends steam)
 # Graphics / Video
 video=(blender camtasia darktable gimp inkscape
   pencil teamviewer yed youtube-dl vlc)
