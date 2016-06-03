@@ -20,12 +20,6 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Trackpad: enable bottom right corner to right-click
-#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-#defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-#defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
-
 # General: enable "natural" (Lion-style) scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 
@@ -36,52 +30,40 @@ defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 chflags nohidden ~/Library
 
 # Set the Finder prefs for showing a few different volumes on the Desktop.
-echo ""
-echo "Showing icons for hard drives, servers, and removable media on the desktop"
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
-echo ""
-echo "Expanding the save panel by default"
+# Expanding the save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
  
-echo ""
-echo "Automatically quit printer app once the print jobs complete"
+# Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
  
+# Displaying ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
-echo ""
-echo "Displaying ASCII control characters using caret notation in standard text views"
 defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
  
-echo ""
-echo "Disabling system-wide resume"
+# Disabling system-wide resume
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
  
-echo ""
-echo "Disabling automatic termination of inactive apps"
+# Disabling automatic termination of inactive apps
 defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
  
-echo ""
-echo "Saving to disk (not to iCloud) by default"
+# Saving to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
- 
-echo ""
-echo "Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window"
+
+# Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
  
-echo ""
-echo "Never go into computer sleep mode"
+# Never go into computer sleep mode
 systemsetup -setcomputersleep Off > /dev/null
  
-echo ""
-echo "Check for software updates daily, not just once per week"
+# Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
-echo ""
-echo "Disable smart quotes and smart dashes as theyâ€™re annoying when typing code"
+# Disable smart quotes and smart dashes as theyâ€™re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
@@ -89,96 +71,76 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input
 ###############################################################################
 
-echo ""
-echo "Increasing sound quality for Bluetooth headphones/headsets"
+# Increasing sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
  
-echo ""
-echo "Enabling full keyboard access for all controls (e.g. enable Tab in modal dialogs)"
+# Enabling full keyboard access for all controls (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
  
-echo ""
-echo "Disabling press-and-hold for keys in favor of a key repeat"
+# Disabling press-and-hold for keys in favor of a key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
  
-echo ""
-echo "Setting a blazingly fast keyboard repeat rate (ain't nobody got time fo special chars while coding!)"
+# Setting a blazingly fast keyboard repeat rate (ain't nobody got time fo special chars while coding!)
 defaults write NSGlobalDomain KeyRepeat -int 0
  
-echo ""
-echo "Setting trackpad & mouse speed to a reasonable number"
+# Setting trackpad & mouse speed to a reasonable number
 defaults write -g com.apple.trackpad.scaling 2
 defaults write -g com.apple.mouse.scaling 2.5
 
-echo ""
-echo "automatically illuminate built-in MacBook keyboard in low light"
+# automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool true
  
-echo ""
-echo "Turn off keyboard illumination when computer is not used for 5 minutes"
+# Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
 
 ###############################################################################
 # Screen
 ###############################################################################
  
-echo ""
-echo "Requiring password immediately after sleep or screen saver begins"
+# Requiring password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
  
-echo ""
-echo "Enabling subpixel font rendering on non-Apple LCDs"
+# Enabling subpixel font rendering on non-Apple LCDs
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
  
-echo ""
-echo "Enable HiDPI display modes (requires restart)"
+# Enable HiDPI display modes (requires restart)
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 ###############################################################################
 # Finder
 ###############################################################################
 
-echo ""
-echo "Showing all filename extensions in Finder by default"
+# Showing all filename extensions in Finder by default
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-echo ""
-echo "Showing status bar in Finder by default"
+# Showing status bar in Finder by default
 defaults write com.apple.finder ShowStatusBar -bool true
 
-echo ""
-echo "Showing hidden files in Finder by default"
+# Showing hidden files in Finder by default
 defaults write com.apple.finder AppleShowAllFiles YES
 
-echo ""
-echo "Allowing text selection in Quick Look/Preview in Finder by default"
+# Allowing text selection in Quick Look/Preview in Finder by default
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
-echo ""
-echo "Displaying full POSIX path as Finder window title"
+# Displaying full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
-echo ""
-echo "Disabling the warning when changing a file extension"
+# Disabling the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-echo ""
-echo "Use column view in all Finder windows by default"
+# Use column view in all Finder windows by default
 defaults write com.apple.finder FXPreferredViewStyle Clmv
 
-echo ""
-echo "Avoiding the creation of .DS_Store files on network volumes"
+# Avoiding the creation of .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-echo ""
-echo "Disabling disk image verification"
+# Disabling disk image verification
 defaults write com.apple.frameworks.diskimages skip-verify -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
-echo ""
-echo "Enabling snap-to-grid for icons on the desktop and in other icon views"
+# Enabling snap-to-grid for icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
@@ -273,46 +235,36 @@ defaults write com.apple.dock showhidden -bool true
 # Safari & WebKit
 ###############################################################################
 
-echo ""
-echo "Hiding SafariÃ¢â‚¬â„¢s bookmarks bar by default"
+# Hiding SafariÃ¢â‚¬â„¢s bookmarks bar by default
 defaults write com.apple.Safari ShowFavoritesBar -bool false
 
-echo ""
-echo "Hiding SafariÃ¢â‚¬â„¢s sidebar in Top Sites"
+# Hiding SafariÃ¢â‚¬â„¢s sidebar in Top Sites
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 
-echo ""
-echo "Disabling SafariÃ¢â‚¬â„¢s thumbnail cache for History and Top Sites"
+# Disabling SafariÃ¢â‚¬â„¢s thumbnail cache for History and Top Sites
 defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
-echo ""
-echo "Enabling SafariÃ¢â‚¬â„¢s debug menu"
+# Enabling SafariÃ¢â‚¬â„¢s debug menu
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
-echo ""
-echo "Making SafariÃ¢â‚¬â„¢s search banners default to Contains instead of Starts With"
+# Making SafariÃ¢â‚¬â„¢s search banners default to Contains instead of Starts With
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
-echo ""
-echo "Removing useless icons from SafariÃ¢â‚¬â„¢s bookmarks bar"
+# Removing useless icons from SafariÃ¢â‚¬â„¢s bookmarks bar
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
-echo ""
-echo "Allow hitting the Backspace key to go to the previous page in history"
+# Allow hitting the Backspace key to go to the previous page in history
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
-echo ""
-echo "Enabling the Develop menu and the Web Inspector in Safari"
+# Enabling the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 
-echo ""
-echo "Adding a context menu item for showing the Web Inspector in web views"
+# Adding a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
-echo ""
-echo "Using the system-native print preview dialog in Chrome"
+# Using the system-native print preview dialog in Chrome
 defaults write com.google.Chrome DisablePrintPreview -bool true
 defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 
@@ -321,8 +273,7 @@ defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 # Mail
 ###############################################################################
 
-echo ""
-echo "Setting email addresses to copy as 'foo@example.com' instead of 'Foo Bar <foo@example.com>' in Mail.app"
+# Setting email addresses to copy as 'foo@example.com' instead of 'Foo Bar <foo@example.com>' in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 
@@ -330,8 +281,7 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 # Terminal
 ###############################################################################
 
-echo ""
-echo "Enabling UTF-8 ONLY in Terminal.app and setting the Pro theme by default"
+# Enabling UTF-8 ONLY in Terminal.app and setting the Pro theme by default
 defaults write com.apple.terminal StringEncodings -array 4
 defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
 defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
@@ -341,12 +291,10 @@ defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
 # Time Machine
 ###############################################################################
 
-echo ""
-echo "Preventing Time Machine from prompting to use new hard drives as backup volume"
+# Preventing Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-echo ""
-echo "Disabling local Time Machine backups"
+# Disabling local Time Machine backups
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 
@@ -354,45 +302,37 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 # Messages                                                                    #
 ###############################################################################
 
-echo ""
-echo "Disable automatic emoji substitution (i.e. use plain text smileys)"
+# Disable automatic emoji substitution (i.e. use plain text smileys)
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
-echo ""
-echo "Disable smart quotes as itÃ¢â‚¬â„¢s annoying for messages that contain code"
+# Disable smart quotes as itÃ¢â‚¬â„¢s annoying for messages that contain code
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
-echo ""
-echo "Disable continuous spell checking"
+# Disable continuous spell checking
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 ###############################################################################
 # Personal Additions
 ###############################################################################
 
-echo ""
-echo "Disable hibernation (speeds up entering sleep mode)"
+# Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
 
-echo ""
-echo "Remove the sleep image file to save disk space"
+# Remove the sleep image file to save disk space
 sudo rm /Private/var/vm/sleepimage
-echo "Creating a zero-byte file insteadÃ¢â‚¬Â¦"
+# Creating a zero-byte file insteadÃ¢â‚¬Â¦
 sudo touch /Private/var/vm/sleepimage
-echo "Ã¢â‚¬Â¦and make sure it canÃ¢â‚¬â„¢t be rewritten"
+# Ã¢â‚¬Â¦and make sure it canÃ¢â‚¬â„¢t be rewritten
 sudo chflags uchg /Private/var/vm/sleepimage
 
-echo ""
-echo "Disable the sudden motion sensor as itÃ¢â‚¬â„¢s not useful for SSDs"
+# Disable the sudden motion sensor as itÃ¢â‚¬â„¢s not useful for SSDs
 sudo pmset -a sms 0
 
-echo ""
-echo "Speeding up wake from sleep to 24 hours from an hour"
+# Speeding up wake from sleep to 24 hours from an hour
 # http://www.cultofmac.com/221392/quick-hack-speeds-up-retina-macbooks-wake-from-sleep-os-x-tips/
 sudo pmset -a standbydelay 86400
 
-echo ""
-echo "Disable computer sleep and stop the display from shutting off"
+# Disable computer sleep and stop the display from shutting off
 sudo pmset -a sleep 0
 sudo pmset -a displaysleep 0
 
@@ -400,26 +340,21 @@ sudo pmset -a displaysleep 0
 # Transmission.app                                                            #
 ###############################################################################
 
-echo ""
-echo "Use `~/Downloads/Incomplete` to store incomplete downloads"
+# Use `~/Downloads/Incomplete` to store incomplete downloads
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
 mkdir -p ~/Downloads/Incomplete
 defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
 
-echo ""
-echo "Don't prompt for confirmation before downloading"
+# Don't prompt for confirmation before downloading
 defaults write org.m0k.transmission DownloadAsk -bool false
 
-echo ""
-echo "Trash original torrent files"
+# Trash original torrent files
 defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 
-echo ""
-echo "Hide the donate message"
+# Hide the donate message
 defaults write org.m0k.transmission WarningDonate -bool false
 
-echo ""
-echo "Hide the legal disclaimer"
+# Hide the legal disclaimer
 defaults write org.m0k.transmission WarningLegal -bool false
     
 
